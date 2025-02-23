@@ -16,6 +16,7 @@ html {
   margin: 0;
   overflow: hidden;
   background-color: var(--bg);
+  overflow-y: hidden;
 }
 
 h1 {
