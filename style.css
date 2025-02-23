@@ -1,0 +1,118 @@
+:root {
+  --unsetbg: #575757;
+  --unsettext: #8b8b8b;
+  --setbg: #282828;
+  --settext: #dfdfdf;
+  --bg: #534542;
+  --fontfamily: 'Kanit', sans-serif;
+}
+
+
+body,
+html {
+  height: 100vh;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  background-color: var(--bg);
+}
+
+h1 {
+  text-align: center;
+  height: 8vh;
+  padding: 0;
+  margin: 0;
+  color: var(--settext);
+  font-size: 6vh;
+  font-family: var(--fontfamily);
+  text-decoration: underline;
+}
+
+
+button {
+  border: 0.16em solid black;
+  border-radius: 2em;
+  font-weight: 700;
+  font-size: 1.5em;
+  text-align: center;
+  color: yellow;
+  transition: all 0.15s ease-in-out;
+  background-color: black;
+}
+
+button:active {
+  transform: scale(0.9);
+  background-color: yellow;
+  color: black;
+}
+
+
+
+#popup {
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 10;
+  display: none;
+}
+
+#popupBackground {
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+  width: 50vw;
+  height: 40vw;
+  background-color: #333;
+  z-index: 11;
+}
+
+#popupHeader {
+  text-align: center;
+  color: white;
+  margin: 0 0 2vh 0;
+}
+
+#popupEingabe {
+  display: block;
+  align-self: center;
+  margin: 0 auto;
+}
+
+#popupButton {
+  display: block;
+  align-self: center;
+  margin: 2vh auto;
+}
+
+table {
+  font-family: var(--fontfamily);
+  font-size: 3vh;
+  text-align: center;
+  height: 80vh;
+}
+
+div > table {
+  margin: 0 auto;
+  overflow-x: scroll;
+  width: 100vw;
+}
+
+tr {
+  background-color: var(--setbg);
+  color: var(--settext);
+}
+
+th {
+  padding: 0;
+}
+
+.Unset {
+  color: var(--unsettext) !important;
+  background-color: var(--unsetbg) !important;
+}
