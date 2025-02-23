@@ -97,10 +97,10 @@ table {
   height: 80vh;
 }
 
-div > table {
+.scoreboarddiv {
   margin: 0 auto;
-  overflow-x: scroll;
-  width: 100vw;
+  overflow-y: scroll;
+  width: auto;
 }
 
 tr {

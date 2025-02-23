@@ -1,0 +1,16 @@
+{
+  "name": "SkyJo Punktezähler",
+  "short_name": "SkyJo",
+  "start_url": "/index.html",
+  "display": "fullscreen",
+  "background_color": "#534542",
+  "theme_color": "#000000",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "https://ik.imagekit.io/e94eymdlx/icon.png?updatedAt=1740348366984",
+      "sizes": "256x256",
+      "type": "image/png"
+    }
+  ]
+}
