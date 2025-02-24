@@ -1,7 +1,7 @@
 {
   "name": "SkyJo Punktezähler",
   "short_name": "SkyJo",
-  "start_url": "/index.html",
+  "start_url": "/index.html#seite2",
   "display": "fullscreen",
   "background_color": "#534542",
   "theme_color": "#000000",
