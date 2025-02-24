@@ -75,3 +75,40 @@ function loadScoreboard() {
 }
 
 loadScoreboard();
+
+
+
+
+
+
+
+//setup
+
+function PlayerOption() {
+  Spieler = document.getElementById("Spielercount").value;
+  let namediv = document.getElementById("Spieleroptionen");
+
+  namediv.innerHTML = "";
+
+  for (let i = 0; i < Spieler; i++) {
+    const input = document.createElement("input");
+    input.type = "text";
+    input.placeholder = "Spieler " + (i + 1);
+    namediv.appendChild(input);
+    const br = document.createElement("br");
+    namediv.appendChild(br);
+  }
+}
+
+function GetNames() {
+  Namen = [];
+  let namediv = document.getElementById("Spieleroptionen");
+  for (let i = 0; i < Spieler; i++) {
+    Namen.push(namediv.children[i].value);
+  }
+  if (Namen.includes("")) {
+    alert("Bitte alle Namen eingeben!");
+    return;
+  }
+  window.location = "index.html";
+}
