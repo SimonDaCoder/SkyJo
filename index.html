@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SkyJo</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="setupstyle.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="icon" href="https://ik.imagekit.io/e94eymdlx/icon.png?updatedAt=1740348366984">
@@ -16,24 +17,40 @@
 </head>
 
 <body>
-  <h1>SkyJo</h1>
-  <div class="scoreboarddiv">
-    <table id="scoreboard">
-      <tr id="Names"></tr>
-    </table>
-  </div>
-  <div id="popup">
-    <div id="popupBackground">
-      <h2 id="popupHeader">Spieler: </h2>
-      <input type="tel" id="popupEingabe"></input>
-      <button id="popupButton" onclick="AddScore()">OK</button>
+  <section id="main" class="main">
+    <h1>SkyJo</h1>
+    <div class="scoreboarddiv">
+      <table id="scoreboard">
+        <tr id="Names"></tr>
+      </table>
     </div>
-  </div>
+    <div id="popup">
+      <div id="popupBackground">
+        <h2 id="popupHeader">Spieler: </h2>
+        <input type="tel" id="popupEingabe"></input>
+        <button id="popupButton" onclick="AddScore()">OK</button>
+      </div>
+    </div>
 
-  <div class="buttondiv">
-    <button onclick="newGame()">NewGame</button>
-    <button onclick="newRound()">NewRound</button>
-  </div>
+    <div class="buttondiv">
+      <button onclick="newGame()">NewGame</button>
+      <button onclick="newRound()">NewRound</button>
+    </div>
+  </section>
+
+  <section id="seite2" class="seite2">
+    <div class="countercontainer">
+      <p id="SpielercountTextm">-1</p>
+      <p id="SpielercountText">0</p>
+      <p id="SpielercountTextp">1</p>
+    </div>
+    <input type="range" id="Spielercount" min="2" max="10" step="1" value="2" oninput="PlayerOption()"><br>
+    <div id="Spieleroptionen">
+
+    </div>
+    <button id="Spielerbutton" onclick="GetNames()">OK</button>
+
+  </section>
   <script src="script.js"></script>
 </body>
 

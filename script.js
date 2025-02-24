@@ -1,19 +1,24 @@
-let Spieler = 6;
-let Namen = ['Hannes', 'Papa', 'Mama', 'Simon'];
-let scores = new Array(Spieler).fill(0);
+let Spieler;
+let Namen = [];
+let scores;
 let round = 0;
 let spieleranderreihe = 0;
 
 function newGame() {
+  round = 0;
   Spieler = 0;
   Namen = [];
-  window.location = "setup.html";
+  scores = [];
+  document.getElementById("scoreboard").innerHTML = "";
+  document.getElementById('seite2').scrollIntoView({ behavior: 'smooth' });
 }
 
 function newRound() {
   const popup = document.getElementById("popup");
   popup.style.display = "block";
   document.getElementById("popupHeader").innerHTML = "Spieler: " + Namen[spieleranderreihe];
+
+  console.log("Neue Runde hat gestartet!");
 }
 
 function AddScore() {
@@ -30,10 +35,14 @@ function AddScore() {
     scores[spieleranderreihe] += scoretoadd;
     spieleranderreihe += 1;
     document.getElementById("popupHeader").innerHTML = "Spieler: " + Namen[spieleranderreihe];
+    let letzterSpieler = spieleranderreihe === 0 ? Spieler - 1 : spieleranderreihe - 1;
+    console.log(scoretoadd + " Punkte wurden eingetragen für Spieler " + Namen[letzterSpieler]);
   } else {
     scores[spieleranderreihe] += scoretoadd;
     spieleranderreihe = 0;
     document.getElementById("popup").style.display = "none";
+    let letzterSpieler = spieleranderreihe === 0 ? Spieler - 1 : spieleranderreihe - 1;
+    console.log(scoretoadd + " Punkte wurden eingetragen für Spieler " + Namen[letzterSpieler]);
     setScores();
   }
 
@@ -45,13 +54,16 @@ function setScores() {
   for (let i = 0; i < Spieler; i++) {
     document.getElementById("Score_" + (round) + "_" + (i + 1)).innerHTML = scores[i];
   }
+
+  console.log("Punkte für Runde " + round + " eingetragen.");
 }
 
 
 
 function loadScoreboard() {
   const table = document.getElementById("scoreboard");
-  const namenrow = document.getElementById("Names");
+  const namenrow = table.appendChild(document.createElement("tr"));
+  namenrow.id = "Names";
 
   for (let i = 0; i < Spieler; i++) {
     const th = document.createElement("th");
@@ -74,7 +86,6 @@ function loadScoreboard() {
   }
 }
 
-loadScoreboard();
 
 
 
@@ -106,14 +117,27 @@ function PlayerOption() {
 
 function GetNames() {
   Namen = [];
+  Spieler = parseInt(document.getElementById("Spielercount").value);
   let namediv = document.getElementById("Spieleroptionen");
-  for (let i = 0; i < Spieler; i++) {
-    Namen.push(namediv.children[i].value);
-  }
-  if (Namen.includes("")) {
-    alert("Bitte alle Namen eingeben!");
-    return;
-  }
-  window.location = "index.html";
+  let inputs = namediv.querySelectorAll("input");
+
+  inputs.forEach(input => {
+    if (input.value !== "") {
+      Namen.push(input.value);
+    }
+    else {
+      alert("Bitte alle Namen eingeben!");
+      return;
+    }
+  });
+
+
+  document.getElementById('main').scrollIntoView({ behavior: 'smooth' });
+
+  console.log(Spieler + " Spieler wurden eingetragen");
+  console.log("Die Namen der Spieler sind: " + Namen);
+
+  scores = Array.from({ length: Spieler }, () => 0);
+  loadScoreboard();
 }
 
