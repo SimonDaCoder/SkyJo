@@ -87,6 +87,10 @@ loadScoreboard();
 function PlayerOption() {
   Spieler = document.getElementById("Spielercount").value;
   let namediv = document.getElementById("Spieleroptionen");
+  document.getElementById("SpielercountText").innerHTML = Spieler;
+  document.getElementById("SpielercountTextm").innerHTML = parseInt(Spieler) - 1;
+  document.getElementById("SpielercountTextp").innerHTML = parseInt(Spieler) + 1;
+
 
   namediv.innerHTML = "";
 
@@ -112,3 +116,4 @@ function GetNames() {
   }
   window.location = "index.html";
 }
+

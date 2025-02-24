@@ -1,13 +1,10 @@
 :root {
-  --bg: #0D1B1E;        /* Dunkles Blaugrün für den App-Hintergrund */
-  --headerbg: #176B87;  /* Kräftiges Türkisblau für die Header-Zeile */
-  
-  --setbg: #279C94;     /* Sattes Türkis für gesetzte Kacheln */
-  --settext: #E3FDFD;   /* Helles Pastell-Türkis für Texte in gesetzten Kacheln */
-  
-  --unsetbg: #10454F;   /* Dunkles Petrol für ungesetzte Kacheln */
-  --unsettext: #5DA9A8; /* Weicher Türkiston für Texte in ungesetzten Kacheln */
-  
+  --bg: #0D1B1E;
+  --headerbg: #176B87;
+  --setbg: #279C94;
+  --settext: #E3FDFD;
+  --unsetbg: #10454F;
+  --unsettext: #5DA9A8;
   --fontfamily: 'Kanit', sans-serif;
 }
 
