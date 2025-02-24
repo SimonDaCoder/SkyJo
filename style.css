@@ -1,9 +1,13 @@
 :root {
-  --unsetbg: #575757;
-  --unsettext: #8b8b8b;
-  --setbg: #282828;
-  --settext: #dfdfdf;
-  --bg: #534542;
+  --bg: #0D1B1E;        /* Dunkles Blaugrün für den App-Hintergrund */
+  --headerbg: #176B87;  /* Kräftiges Türkisblau für die Header-Zeile */
+  
+  --setbg: #279C94;     /* Sattes Türkis für gesetzte Kacheln */
+  --settext: #E3FDFD;   /* Helles Pastell-Türkis für Texte in gesetzten Kacheln */
+  
+  --unsetbg: #10454F;   /* Dunkles Petrol für ungesetzte Kacheln */
+  --unsettext: #5DA9A8; /* Weicher Türkiston für Texte in ungesetzten Kacheln */
+  
   --fontfamily: 'Kanit', sans-serif;
 }
 
@@ -30,22 +34,31 @@ h1 {
   text-decoration: underline;
 }
 
+.buttondiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  height: 8vh;
+}
+
 
 button {
-  border: 0.16em solid black;
+  border: 0.16em solid var(--bg);
   border-radius: 2em;
+  box-shadow: 0 0 8px var(--headerbg);
   font-weight: 700;
-  font-size: 1.5em;
+  font-size: 2em;
   text-align: center;
-  color: yellow;
+  color: var(--settext);
   transition: all 0.15s ease-in-out;
-  background-color: black;
+  background-color: var(--unsetbg);
 }
 
 button:active {
   transform: scale(0.9);
-  background-color: yellow;
-  color: black;
+  background-color: var(--setbg);
+  color: var(--unsettext);
 }
 
 
@@ -57,7 +70,7 @@ button:active {
   transform: translate(-50%, -50%);
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: var(--bg);
   z-index: 10;
   display: none;
 }
@@ -69,13 +82,13 @@ button:active {
   transform: translate(-50%, -50%);
   width: 50vw;
   height: 40vw;
-  background-color: #333;
+  background-color: var(--bg);
   z-index: 11;
 }
 
 #popupHeader {
   text-align: center;
-  color: white;
+  color: var(--settext);
   margin: 0 0 2vh 0;
 }
 
@@ -99,6 +112,7 @@ table {
 }
 
 .scoreboarddiv {
+  min-width: 100vw;
   margin: 0 auto;
   overflow-y: scroll;
   width: auto;
@@ -107,13 +121,16 @@ table {
 tr {
   background-color: var(--setbg);
   color: var(--settext);
+  text-shadow: 0 0 8px var(--bg);
 }
 
 th {
-  padding: 0;
+  padding: 0 1vh;
+  background-color: var(--headerbg);
 }
 
 .Unset {
   color: var(--unsettext) !important;
   background-color: var(--unsetbg) !important;
+  text-shadow: none;
 }
